@@ -1,5 +1,6 @@
 package br.edu.infnet.pedido.model.persistencia;
 
+import java.text.ParseException;
 import java.util.List;
 
 import org.junit.Assert;
@@ -56,10 +57,10 @@ public class ClienteDAOTest {
 	
 
 	@Test
-	public void testObterCliente() {
+	public void testObterCliente() throws ParseException {
 		IDAO clienteDAO = new ClienteDAO();
 		List<Cliente> lista = clienteDAO.listarTodos();
-		Cliente cliente = clienteDAO.obter(lista.get(0).getCodigo());
+		Object cliente = clienteDAO.obter(lista.get(0).getCodigo());
 		Assert.assertNotNull(cliente);;
 	}
 	
